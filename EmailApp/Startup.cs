@@ -63,7 +63,7 @@ namespace EmailApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Email}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
