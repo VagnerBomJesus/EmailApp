@@ -30,11 +30,14 @@ namespace EmailApp.Controllers
                 {
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
-                    NetworkCredential credencial = new NetworkCredential(model.FromEmail, model.FromPassword);
+                    //NetworkCredential credencial =
                     smtp.UseDefaultCredentials = true;
-                    smtp.Credentials = credencial;
+                    smtp.Credentials = new NetworkCredential(model.FromEmail, model.FromPassword);
                     smtp.Port = 587;
                     smtp.Send(message);
+                    //smtp.S(message);
+                    //Permitir aplicações menos seguras: ATIVADO
+
 
                     ViewBag.Message = "Email Sent Successfully";
                 }
